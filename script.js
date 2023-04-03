@@ -11,7 +11,7 @@ function handleSubmit(event) {
 }
 
 async function submitToAPI(data) {
-  var response = await fetch("http://localhost:3000/posts", {
+  var response = await fetch("https://fetch-images-api.fly.dev/posts", {
     method: "POST",
     body: data,
   })
