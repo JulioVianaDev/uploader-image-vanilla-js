@@ -18,9 +18,9 @@ async function submitToAPI(data) {
   var json=  await response.json();
   console.log(json)
     // .then((data) => {
-    //   const latestPost = document.getElementById("latest-post");
-    //   console.log(data.image_url)
-    //   latestPost.innerHTML = `<img src="${toString(data.image_url)}" alt="Última imagem enviada">`;
+  const latestPost = document.getElementById("latest-post");
+  // console.log(data.image_url)
+  latestPost.innerHTML = `<img src="${json.image_url}" alt="Última imagem enviada">`;
     // })
     // .catch((error) => console.error(error));
 }
