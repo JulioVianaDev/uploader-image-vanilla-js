@@ -10,15 +10,17 @@ function handleSubmit(event) {
   submitToAPI(data);
 }
 
-function submitToAPI(data) {
-  fetch("http://localhost:3000/posts", {
+async function submitToAPI(data) {
+  var response = await fetch("http://localhost:3000/posts", {
     method: "POST",
     body: data,
   })
-    .then((response) => response.json())
-    .then((data) => {
-      const latestPost = document.getElementById("latest-post");
-      latestPost.innerHTML = `<img src="${data.image_url}" alt="Última imagem enviada">`;
-    })
-    .catch((error) => console.error(error));
+  var json=  await response.json();
+  console.log(json)
+    // .then((data) => {
+    //   const latestPost = document.getElementById("latest-post");
+    //   console.log(data.image_url)
+    //   latestPost.innerHTML = `<img src="${toString(data.image_url)}" alt="Última imagem enviada">`;
+    // })
+    // .catch((error) => console.error(error));
 }
