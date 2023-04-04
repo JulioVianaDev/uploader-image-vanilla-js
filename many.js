@@ -25,6 +25,7 @@ function frameData(formData) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      frameToGet.value = data.id
       getImages();
     })
     .catch((err) => console.log(err));
